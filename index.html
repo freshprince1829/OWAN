@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to OWAN</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #FAF3EF; /* Beige background */
+            color: #5A4233; /* Hint of brown for text */
+            overflow: hidden;
+        }
+
+        /* Landing Container */
+        .landing-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #F6EDE9; /* Soft beige tone */
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5em;
+            margin: 0 0 20px;
+            color: #5A4233;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 0 0 40px;
+            color: #7D5A50;
+            animation: slideIn 1.5s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #C89F94;
+            color: #FFF;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeIn 2s ease-in 1s;
+            animation-fill-mode: both;
+        }
+
+        button:hover {
+            background-color: #A97F6E;
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function navigateToHome() {
+            const landing = document.querySelector('.landing-container');
+            landing.style.animation = 'fadeOut 1s ease-out';
+            setTimeout(() => {
+                window.location.href = 'homepage.html';
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="landing-container">
+        <h1>OWAN</h1>
+        <p>Discover The Beauty Of Artisan Creations.</p>
+        <button onclick="navigateToHome()">Enter</button>
+    </div>
+</body>
+</html>
